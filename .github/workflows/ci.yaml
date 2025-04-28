@@ -131,6 +131,11 @@ jobs:
             target: aarch64-unknown-linux-gnu
             build: CC=clang yarn build --target aarch64-unknown-linux-gnu --use-napi-cross
           - host: ubuntu-latest
+            target: riscv64gc-unknown-linux-gnu
+            build: |
+              sudo apt-get install -y {binutils,gcc}-riscv64-linux-gnu
+              yarn build --target riscv64gc-unknown-linux-gnu
+          - host: ubuntu-latest
             target: 'armv7-unknown-linux-gnueabihf'
             build: CC=clang yarn build --target armv7-unknown-linux-gnueabihf --use-napi-cross
           - host: ubuntu-latest
