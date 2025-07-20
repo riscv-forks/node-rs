@@ -3,6 +3,7 @@ authors = ["Francesco Benedetto"]
 edition = "2021"
 name    = "node-rs-jsonwebtoken"
 version = "0.1.0"
+rust-version.workspace = true
 
 [lib]
 crate-type = ["cdylib"]
