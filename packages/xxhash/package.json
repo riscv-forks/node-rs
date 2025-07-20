@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/xxhash",
+  "name": "@riscv-forks/xxhash",
   "version": "1.7.6",
   "description": "Fastest xxhash implementation in Node.js",
   "keywords": [

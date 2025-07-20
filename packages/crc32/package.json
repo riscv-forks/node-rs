@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/crc32",
+  "name": "@riscv-forks/crc32",
   "version": "1.10.6",
   "description": "SIMD crc32",
   "keywords": [

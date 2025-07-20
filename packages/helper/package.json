@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/helper",
+  "name": "@riscv-forks/helper",
   "version": "1.6.0",
   "description": "Helper library for node-rs",
   "keywords": [

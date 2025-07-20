@@ -1,5 +1,5 @@
 {
-  "name": "@node-rs/argon2",
+  "name": "@riscv-forks/argon2",
   "version": "2.0.2",
   "description": "RustCrypto: Argon2 binding for Node.js",
   "homepage": "https://github.com/napi-rs/node-rs",
