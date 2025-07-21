@@ -114,7 +114,7 @@ jobs:
             target: 'i686-pc-windows-msvc'
           - host: ubuntu-latest
             target: 'x86_64-unknown-linux-gnu'
-            build: CC=clang yarn build --target x86_64-unknown-linux-gnu --use-napi-cross
+            build: TARGET_CC=clang yarn build --target x86_64-unknown-linux-gnu --use-napi-cross
           - host: ubuntu-latest
             target: 'x86_64-unknown-linux-musl'
             build: yarn build --target x86_64-unknown-linux-musl -x
@@ -122,14 +122,14 @@ jobs:
             target: 'aarch64-apple-darwin'
             build: |
               sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*;
-              export CC=$(xcrun -f clang);
-              export CXX=$(xcrun -f clang++);
+              export TARGET_CC=$(xcrun -f clang);
+              export TARGET_CXX=$(xcrun -f clang++);
               SYSROOT=$(xcrun --sdk macosx --show-sdk-path);
               export CFLAGS="-isysroot $SYSROOT -isystem $SYSROOT";
               yarn build --target aarch64-apple-darwin
           - host: ubuntu-latest
             target: aarch64-unknown-linux-gnu
-            build: CC=clang yarn build --target aarch64-unknown-linux-gnu --use-napi-cross
+            build: TARGET_CC=clang yarn build --target aarch64-unknown-linux-gnu --use-napi-cross
           - host: ubuntu-latest
             target: riscv64gc-unknown-linux-gnu
             build: |
@@ -137,7 +137,7 @@ jobs:
               yarn build --target riscv64gc-unknown-linux-gnu
           - host: ubuntu-latest
             target: 'armv7-unknown-linux-gnueabihf'
-            build: CC=clang yarn build --target armv7-unknown-linux-gnueabihf --use-napi-cross
+            build: TARGET_CC=clang yarn build --target armv7-unknown-linux-gnueabihf --use-napi-cross
           - host: ubuntu-latest
             target: aarch64-linux-android
             build: yarn build --target aarch64-linux-android
