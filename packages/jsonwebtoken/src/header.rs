@@ -20,9 +20,9 @@ pub struct Header {
   /// Defined in [RFC7515#4.1.2](https://tools.ietf.org/html/rfc7515#section-4.1.2).
   pub json_key_url: Option<String>,
 
-  /// JSON Web Key
-  ///
-  /// Defined in [RFC7515#4.1.3](https://tools.ietf.org/html/rfc7515#section-4.1.3).
+  // /// JSON Web Key
+  // ///
+  // /// Defined in [RFC7515#4.1.3](https://tools.ietf.org/html/rfc7515#section-4.1.3).
   // TODO: support jwk
   // pub jwk: Option<Jwk>,
 

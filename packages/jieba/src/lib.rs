@@ -48,7 +48,7 @@ impl TryFrom<KeywordExtractConfig<'_>> for jieba_rs::KeywordExtractConfig {
       let iter = iter_func.apply(sw, ())?;
       while {
         let next_fn: Function<'_, (), Object> = iter.get_named_property_unchecked("next")?;
-        let next = next_fn.apply(&iter, ())?;
+        let next = next_fn.apply(iter, ())?;
         let done: bool = next.get_named_property_unchecked("done")?;
         if !done {
           let value: String = iter.get_named_property_unchecked("value")?;
