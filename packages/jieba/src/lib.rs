@@ -29,16 +29,16 @@ pub struct Keyword {
 /// Creates a KeywordExtractConfig state that contains filter criteria as
 /// well as segmentation configuration for use by keyword extraction
 /// implementations.
-pub struct KeywordExtractConfig {
+pub struct KeywordExtractConfig<'env> {
   #[napi(ts_type = "Set<string> | undefined")]
-  pub stop_words: Option<Object>,
+  pub stop_words: Option<Object<'env>>,
   /// Any segments less than this length will not be considered a Keyword
   pub min_keyword_length: Option<u32>,
   /// If true, fall back to hmm model if segment cannot be found in the dictionary
   pub use_hmm: Option<bool>,
 }
 
-impl TryFrom<KeywordExtractConfig> for jieba_rs::KeywordExtractConfig {
+impl TryFrom<KeywordExtractConfig<'_>> for jieba_rs::KeywordExtractConfig {
   type Error = Error;
 
   fn try_from(config: KeywordExtractConfig) -> Result<Self> {
@@ -144,7 +144,7 @@ impl TfIdf {
   }
 
   #[napi]
-  pub fn set_config(&mut self, config: KeywordExtractConfig) -> Result<()> {
+  pub fn set_config(&mut self, config: KeywordExtractConfig<'_>) -> Result<()> {
     mem::drop(mem::replace(self.0.config_mut(), config.try_into()?));
     Ok(())
   }
